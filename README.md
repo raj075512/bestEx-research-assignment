@@ -2,7 +2,7 @@
 # Market Data Merger
 
 ### Overview
-The **Market Data Merger** program merges multiple CSV files containing market data into a single consolidated file. It processes the files in parallel using multithreading and ensures the data is sorted based on timestamp and symbol.
+The **Market Data Merger** program merges multiple  files containing market data into a single consolidated file. It processes the files in parallel using multithreading and ensures the data is sorted based on timestamp and symbol.
 
 ---
 
@@ -35,7 +35,7 @@ The **Market Data Merger** program merges multiple CSV files containing market d
 
 6. **Robust Error Handling**:
    - Catches filesystem errors (e.g., missing directories).
-   - Handles malformed CSV data gracefully.
+   - Handles malformed txt data gracefully.
 
 ---
 
@@ -52,7 +52,7 @@ The **Market Data Merger** program merges multiple CSV files containing market d
    - Uses intermediate in-memory structures to minimize writes to disk.
 
 4. **Efficient Parsing**:
-   - Optimized CSV parsing using lightweight string operations.
+   - Optimized txt parsing using lightweight string operations.
 
 5. **Priority Queue**:
    - Custom thread-safe priority queue ensures proper sorting with minimal locking overhead.
@@ -69,12 +69,12 @@ The **Market Data Merger** program merges multiple CSV files containing market d
    - Ensures the output file can be created.
 
 2. **File Chunking**:
-   - The input directory is scanned for all valid CSV files.
+   - The input directory is scanned for all valid txt files.
    - Files are divided into smaller chunks, each assigned to a thread.
 
 3. **Parallel Processing**:
    - Each thread processes its chunk:
-     - Reads CSV files line by line.
+     - Reads txt files line by line.
      - Parses and validates each record.
      - Pushes parsed records into the thread-safe priority queue.
 
@@ -86,7 +86,7 @@ The **Market Data Merger** program merges multiple CSV files containing market d
    - The final merged data is written to the output file.
 
 6. **Final Output**:
-   - The program creates a consolidated CSV file sorted by timestamp and symbol.
+   - The program creates a consolidated txt file sorted by timestamp and symbol.
 
 ---
 
@@ -201,7 +201,7 @@ MSFT,2025-01-01T10:01:00,151.00,200,NASDAQ,ASK
      - Windows: Install MinGW and add it to the `PATH`.
 
 2. **Filesystem errors**:
-   - Ensure the input directory exists and contains valid CSV files.
+   - Ensure the input directory exists and contains valid txt files.
 
 3. **Runtime errors**:
    - Check if you have write permissions for the output file path.
