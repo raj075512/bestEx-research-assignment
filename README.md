@@ -166,12 +166,12 @@ The **Market Data Merger** program merges multiple CSV files containing market d
 #### Input Directory
 ```
 input_data/
-├── AAPL.csv
-├── MSFT.csv
-└── TSLA.csv
+├── AAPL.txt
+├── MSFT.txt
+└── TSLA.txt
 ```
 
-Each CSV file has the following structure:
+Each txt file has the following structure:
 ```
 Timestamp,Price,Size,Exchange,Type
 2025-01-01T10:00:00,150.00,100,NASDAQ,BID
@@ -180,10 +180,10 @@ Timestamp,Price,Size,Exchange,Type
 
 #### Command
 ```bash
-./bin/market_data_merger input_data output.csv
+./bin/market_data_merger input_data output.txt
 ```
 
-#### Output File (`output.csv`)
+#### Output File (`output.txt`)
 ```
 Symbol,Timestamp,Price,Size,Exchange,Type
 AAPL,2025-01-01T10:00:00,150.00,100,NASDAQ,BID
